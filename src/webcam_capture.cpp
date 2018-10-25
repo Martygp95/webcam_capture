@@ -9,8 +9,9 @@
 //main
 int main(int argc, char *argv[])
 {
-    cv::VideoCapture camera; //OpenCV video capture object
-    cv::Mat image; //OpenCV image object
+   	cv::VideoCapture camera; //OpenCV video capture object
+    	cv::Mat image; //OpenCV image object
+	cv::Mat gray;
 	int cam_id; //camera id . Associated to device number in /dev/videoX
 	cv::Scalar_<unsigned char> px_value; //pixel value (4-element vector)
 	int user_key; //user pressed key to quit
@@ -49,9 +50,12 @@ int main(int argc, char *argv[])
             std::cout << "No frame" << std::endl;
             cv::waitKey();
         }
+	
+cvtColor(image, gray,cv::COLOR_RGB2HSV);
 
+	
         //show image in a window
-        cv::imshow("Output Window", image);
+        cv::imshow("Output Window", gray);
 
 		//Waits 30 millisecond to check if 'q' key has been pressed. If so, breaks the loop. Otherwise continues.
     	if( (unsigned char)(cv::waitKey(30) & 0xff) == 'q' ) break; 

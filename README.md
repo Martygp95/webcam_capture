@@ -21,8 +21,6 @@ Un cop executat s’hauria d’obrir una finestra mostrant la imatge de la càma
 
 En aquest apartat s'explica l'arxiu CMakeLists.txt.
 
-![alt text](src/i2.png)
-
 Com en l’exemple del Hello World, primer s’indica la versió requerida del Cmake (CMAKE_MINIMUM_REQUIRED), el qual exigeix que la versió sigui igual o superior a l’establerta, degut a que el comportament del Cmake vaia en funció de la versió.
 
 El següent paràmetre definit serà el nom del executable, que s’anomenarà webcam_capture. Es posa amb la comanda PROJECT.
